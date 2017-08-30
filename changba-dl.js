@@ -1,20 +1,17 @@
-function insertAfter(newNode, referenceNode) {
-    // code from: https://stackoverflow.com/questions/4793604/how-to-do-insert-after-in-javascript-without-using-a-library
-    referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
-}
-
+// 获取MP3文件url
 audio = document.getElementById('audio')['src'];
-export_song = document.getElementById('export_song');
+
+// 获取分享标签
+span = document.getElementsByClassName('share')[0];
+span.textContent = '';
 em = document.createElement('em');
 i = document.createElement('i');
-span = document.createElement('span');
 
 a = document.createElement('a');
 a.setAttribute('href', audio);
+a.setAttribute('target', '_blank');
 a.appendChild(document.createTextNode('下载'));
 
 em.appendChild(a);
 span.appendChild(i);
 span.appendChild(em);
-
-insertAfter(span, export_song);
